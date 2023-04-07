@@ -1,0 +1,76 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      App1
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+<!-- navigate to components pages -->
+  <!-- components -->
+  <ion-list>
+    <ion-header>Components</ion-header>
+    <!-- row 1 -->
+    <ion-buttons>
+      <!-- c1 one -->
+      <ion-button color="primary" routerLink="/ionic-inputs" routerDirection="root">
+        input page
+      </ion-button>
+      <!-- c1 two -->
+      <ion-button color="primary" routerLink="/ionic-label" routerDirection="root">
+        label page
+      </ion-button>
+      <!-- c1 three -->
+      <ion-button color="primary" routerLink="/ionic-button" routerDirection="root">
+        button page
+      </ion-button>
+    </ion-buttons>
+    <!-- row 2 -->
+    <ion-buttons>
+      <!-- c2 one -->
+      <ion-button color="primary" routerLink="/ionic-icons" routerDirection="root">
+        icons page
+      </ion-button>
+      <!-- c2 two -->
+      <ion-button color="primary" routerLink="/ionic-alert-ex" routerDirection="root">
+        alert page
+      </ion-button>
+      <!-- c2 three -->
+      <ion-button color="primary" routerLink="/ion-lists" routerDirection="root">
+        lists page
+      </ion-button>
+    </ion-buttons>
+  </ion-list>
+  
+  <ion-list>
+    <ion-header>Examples</ion-header>
+    <ion-buttons>
+      <!-- s3 one -->
+      <ion-button color="primary" routerLink="/ex1" routerDirection="root">
+        example 1
+      </ion-button>
+    
+      <!-- s3 two -->
+      <ion-button color="primary" routerLink="/ex2" routerDirection="root">
+        example 2
+      </ion-button>
+      <!-- s3 three -->
+      <ion-button color="primary" routerLink="/ex3" routerDirection="root">
+        example 3
+      </ion-button>
+    </ion-buttons>
+  </ion-list>
+
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <strong>Ready to create an app?</strong>
+    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  </div> -->
+</ion-content>

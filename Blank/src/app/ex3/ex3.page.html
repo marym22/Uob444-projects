@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="#" ></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Example 3</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label fixed>Number 1</ion-label>
+    <ion-input [(ngModel)]="number1"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label fixed>Number 2</ion-label>
+    <ion-input [(ngModel)]="number2"></ion-input>
+  </ion-item>
+  
+  <ion-button (click)="Add()">+</ion-button>
+  <ion-button (click)="Subtract()">-</ion-button>
+  <ion-button (click)="Multiply()">*</ion-button>
+  <ion-button (click)="Divide()">/</ion-button>
+  
+  <br>
+
+  <ion-item>
+    <ion-label>Answer</ion-label>
+    <ion-label color="primary">{{ answer }}</ion-label>
+  </ion-item>    
+</ion-content>

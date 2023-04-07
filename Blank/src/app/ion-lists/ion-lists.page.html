@@ -1,0 +1,230 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="#" ></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>ionLists</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- /// -->
+  <ion-list>
+    <ion-item>
+      <ion-title color="primary">Basic List</ion-title>
+    </ion-item>
+
+    <ion-item>
+      item one
+    </ion-item>
+
+    <ion-item>
+      item two
+    </ion-item>
+
+    <ion-item>
+      item three
+    </ion-item>
+  </ion-list>
+
+  <!-- /// -->
+  <ion-list [inset]="true">
+    <ion-item>
+      <ion-title color="primary">List With Inset Property</ion-title>
+    </ion-item>
+
+    <ion-item>
+      item one
+    </ion-item>
+
+    <ion-item>
+      item two
+    </ion-item>
+
+    <ion-item>
+      item three
+    </ion-item>
+  </ion-list>
+
+  <!-- /// -->
+  <ion-list lines="full">
+    <ion-item>
+      <ion-title color="primary">Full Lines List</ion-title>
+    </ion-item>
+
+    <ion-item>
+      item one
+    </ion-item>
+
+    <ion-item>
+      item two
+    </ion-item>
+
+    <ion-item>
+      item three
+    </ion-item>
+  </ion-list>
+
+  <!-- /// -->
+  <ion-list lines="inset">
+    <ion-item>
+      <ion-title color="primary">Inset Lines List</ion-title>
+    </ion-item>
+
+    <ion-item>
+      item one
+    </ion-item>
+
+    <ion-item>
+      item two
+    </ion-item>
+
+    <ion-item>
+      item three
+    </ion-item>
+  </ion-list>
+
+  <!-- /// -->
+  <ion-list lines="none">
+    <ion-item>
+      <ion-title color="primary">No Lines List</ion-title>
+    </ion-item>
+
+    <ion-item>
+      item one
+    </ion-item>
+
+    <ion-item>
+      item two
+    </ion-item>
+
+    <ion-item>
+      item three
+    </ion-item>
+  </ion-list>
+
+  <!-- /// -->
+  <ion-item-group>
+    <ion-item>
+      <ion-title color="primary">Item Group</ion-title>
+    </ion-item>
+
+    <ion-item>
+      item one
+    </ion-item>
+
+    <ion-item-divider color="primary">
+      item-divider
+    </ion-item-divider>
+
+    <ion-item>
+      item two
+    </ion-item>
+    
+    <ion-item-divider color="primary">
+      item-divider
+    </ion-item-divider>
+
+    <ion-item>
+      item three
+    </ion-item>
+  </ion-item-group>
+
+  <!-- /// -->
+  <ion-list>
+    <ion-list-header color="secondary">
+      List-Header
+    </ion-list-header>
+
+    <ion-item>
+      item one
+    </ion-item>
+
+    <ion-item>
+      item two
+    </ion-item>
+
+    <ion-item>
+      item three
+    </ion-item>
+  </ion-list>
+
+  <!-- /// -->
+  <ion-list>
+    <ion-item>
+      <ion-title color="primary">Avatar Lists</ion-title>
+    </ion-item>
+
+    <ion-item button (click)="testClick()">
+      <ion-avatar slot="start">
+        <img src="https://sitechecker.pro/wp-content/uploads/2017/12/URL-meaning.png">
+      </ion-avatar>        
+      <ion-label>Avatar Start, Button Item</ion-label>
+    </ion-item>
+
+    <ion-item href="#">
+      <ion-label>Thumbnail End, Anchor Item</ion-label>
+      <ion-thumbnail slot="end">
+        <img src="https://sitechecker.pro/wp-content/uploads/2017/12/URL-meaning.png">
+      </ion-thumbnail>
+    </ion-item>
+  </ion-list>
+
+  <!-- /// -->
+  <ion-list>
+    <ion-item>
+      <ion-title color="primary">Multiline Lists</ion-title>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label class="ion-text-wrap">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. At facilis, nostrum obcaecati illo quidem quisquam.
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="ion-text-wrap">
+        <ion-text><h3>H3 Header</h3></ion-text>
+        <p>Paragraph 1</p>
+        <ion-text><p>Paragraph 2</p></ion-text>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- /// -->
+  <ion-list>
+    <ion-item>
+      <ion-title color="primary">Sliding Lists</ion-title>
+    </ion-item>
+
+    <ion-item-sliding>
+      <ion-item-options side="start">
+        <ion-item-option>
+          Start
+        </ion-item-option>
+      </ion-item-options>
+
+      <ion-item>
+        <ion-label>Slide me</ion-label>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option>
+          End
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <!-- /// -->
+  <ion-list>
+    <ion-item>
+      <ion-title color="primary">Types of Lists</ion-title>
+    </ion-item>
+
+    <ion-item detail>detail</ion-item>
+    <ion-item button>button</ion-item>
+    <ion-item button detail>button detail</ion-item>
+  </ion-list>
+</ion-content>

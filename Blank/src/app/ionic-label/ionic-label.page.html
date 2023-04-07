@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="#" ></ion-back-button>
+    </ion-buttons>
+    
+    <ion-title>ionicLabel</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- label positioning types -->
+  <ion-list>
+    <ion-title color="primary">Label Positioning Types</ion-title>
+
+    <!-- 1) Without input -->
+    <ion-list>
+      <ion-title> 1) Without input</ion-title>
+        <ion-item>
+          <ion-label>Default label</ion-label>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label position="fixed">Fixed label</ion-label>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label position="stacked">Stacked label</ion-label>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label position="floating">Floating label</ion-label>
+        </ion-item>
+    </ion-list>
+
+
+    <!-- 2) With input -->      
+    <ion-list>
+      <ion-title> 2) with input</ion-title>
+        <ion-item>
+          <ion-label>Default label</ion-label>
+          <ion-input placeholder="Enter text"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label position="fixed">Fixed label</ion-label>
+          <ion-input placeholder="Enter text"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label position="stacked">Stacked label</ion-label>
+          <ion-input placeholder="Enter text"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label position="floating">Floating label</ion-label>
+          <ion-input placeholder="Enter text"></ion-input>
+        </ion-item>
+    </ion-list>  
+  </ion-list>
+
+  <!-- 3) no ion item -->
+  <ion-list> 
+    <ion-title>3) no ion item</ion-title>
+
+    <ion-label>Default label</ion-label>
+    <ion-input placeholder="Enter text"></ion-input>
+
+    <ion-label position="fixed">Fixed label</ion-label>
+    <ion-input placeholder="Enter text"></ion-input>  
+    
+    <ion-label position="stacked">Stacked label</ion-label>
+    <ion-input placeholder="Enter text"></ion-input>
+
+    <ion-label position="floating">Floating label</ion-label>
+    <ion-input placeholder="Enter text"></ion-input>
+  </ion-list>
+
+</ion-content>

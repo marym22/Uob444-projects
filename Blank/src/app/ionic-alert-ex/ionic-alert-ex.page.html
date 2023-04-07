@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="#" ></ion-back-button>
+    </ion-buttons>
+    
+    <ion-title>ionicAlertExample</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item>
+      <ion-title>Simple Alert Message</ion-title>
+    </ion-item>
+
+    <ion-item>
+      <ion-button (click)="showAlert()" size="default">Click Me!</ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <ion-title>Conformation Alert Message</ion-title>
+    </ion-item>
+
+    <ion-item>
+      <ion-button (click)="showConfirm()" size="default">Click Me!</ion-button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
