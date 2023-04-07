@@ -63,6 +63,10 @@ const routes: Routes = [
     path: 'ionic-checkbox',
     loadChildren: () => import('./ionic-checkbox/ionic-checkbox.module').then( m => m.IonicCheckboxPageModule)
   },
+  {
+    path: 'ionic-badges',
+    loadChildren: () => import('./ionic-badges/ionic-badges.module').then( m => m.IonicBadgesPageModule)
+  },
 ];
 
 @NgModule({
