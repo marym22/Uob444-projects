@@ -10,9 +10,10 @@
 
 <!-- navigate to components pages -->
   <!-- components -->
-  <ion-list>
+  <ion-list [inset]="true">
     <ion-header>Components</ion-header>
     <!-- row 1 -->
+    <!-- /// -->
     <ion-buttons>
       <!-- c1 one -->
       <ion-button color="primary" routerLink="/ionic-inputs" routerDirection="root">
@@ -28,6 +29,7 @@
       </ion-button>
     </ion-buttons>
     <!-- row 2 -->
+    <!-- /// -->
     <ion-buttons>
       <!-- c2 one -->
       <ion-button color="primary" routerLink="/ionic-icons" routerDirection="root">
@@ -38,13 +40,45 @@
         alert page
       </ion-button>
       <!-- c2 three -->
-      <ion-button color="primary" routerLink="/ion-lists" routerDirection="root">
+      <ion-button color="primary" routerLink="/ionic-lists" routerDirection="root">
         lists page
+      </ion-button>
+    </ion-buttons>
+    <!-- row 3 -->
+    <!-- /// -->
+    <ion-buttons>
+      <!-- c3 one -->
+      <ion-button color="primary" routerLink="/ionic-loading" routerDirection="root">
+        loading page
+      </ion-button>
+      <!-- c3 two -->
+      <ion-button color="primary" routerLink="/ionic-grid" routerDirection="root">
+        Grid page
+      </ion-button>      
+      <!-- c3 three -->
+      <ion-button color="primary" routerLink="/ionic-cards" routerDirection="root">
+        Cards page
+      </ion-button>
+    </ion-buttons>
+    <!-- row 4 -->
+    <!-- /// -->
+    <ion-buttons>
+      <!-- c4 one -->
+      <ion-button color="primary" routerLink="/ionic-checkbox" routerDirection="root">
+        checkbox page
+      </ion-button>
+      <!-- c4 two -->
+      <ion-button color="primary" routerLink="/ionic-radio" routerDirection="root">
+        radio page
+      </ion-button>
+      <!-- c4 three -->
+      <ion-button color="primary" routerLink="/ionic-toggle" routerDirection="root">
+        toggle page
       </ion-button>
     </ion-buttons>
   </ion-list>
   
-  <ion-list>
+  <ion-list [inset]="true">
     <ion-header>Examples</ion-header>
     <ion-buttons>
       <!-- s3 one -->

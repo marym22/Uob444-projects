@@ -44,8 +44,24 @@ const routes: Routes = [
     loadChildren: () => import('./ex3/ex3.module').then( m => m.Ex3PageModule)
   },
   {
-    path: 'ion-lists',
-    loadChildren: () => import('./ion-lists/ion-lists.module').then( m => m.IonListsPageModule)
+    path: 'ionic-loading',
+    loadChildren: () => import('./ionic-loading/ionic-loading.module').then( m => m.IonicLoadingPageModule)
+  },
+  {
+    path: 'ionic-lists',
+    loadChildren: () => import('./ionic-lists/ionic-lists.module').then( m => m.IonicListsPageModule)
+  },
+  {
+    path: 'ionic-grid',
+    loadChildren: () => import('./ionic-grid/ionic-grid.module').then( m => m.IonicGridPageModule)
+  },
+  {
+    path: 'ionic-cards',
+    loadChildren: () => import('./ionic-cards/ionic-cards.module').then( m => m.IonicCardsPageModule)
+  },
+  {
+    path: 'ionic-checkbox',
+    loadChildren: () => import('./ionic-checkbox/ionic-checkbox.module').then( m => m.IonicCheckboxPageModule)
   },
 ];
 
