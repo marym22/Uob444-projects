@@ -115,6 +115,10 @@ const routes: Routes = [
     path: 'ex5',
     loadChildren: () => import('./ex5/ex5.module').then( m => m.Ex5PageModule)
   },
+  {
+    path: 'ex6',
+    loadChildren: () => import('./ex6/ex6.module').then( m => m.Ex6PageModule)
+  },
 ];
 
 @NgModule({
