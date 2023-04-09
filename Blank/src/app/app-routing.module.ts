@@ -119,6 +119,10 @@ const routes: Routes = [
     path: 'ex6',
     loadChildren: () => import('./ex6/ex6.module').then( m => m.Ex6PageModule)
   },
+  {
+    path: 'ionic-storage-ex',
+    loadChildren: () => import('./ionic-storage-ex/ionic-storage-ex.module').then( m => m.IonicStorageExPageModule)
+  },
 ];
 
 @NgModule({
