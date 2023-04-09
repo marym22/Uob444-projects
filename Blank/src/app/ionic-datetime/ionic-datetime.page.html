@@ -1,0 +1,163 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="#" ></ion-back-button>
+    </ion-buttons>
+    
+    <ion-title>ionicDatetime</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- /// -->
+  <ion-list>
+    <ion-item>
+      <ion-title color="primary">Default</ion-title>
+    </ion-item>
+
+    <ion-list>
+      ion-label
+      <ion-datetime [(ngModel)]="defDate"></ion-datetime>      
+      <ion-item>
+        <ion-label>Date and Time selected : {{ defDate }}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-list>
+  <!-- /// -->
+  <ion-list>
+    <ion-item>
+      <ion-title color="primary">Min and Max</ion-title>
+    </ion-item>
+
+    <ion-list>
+      ion-label
+      <ion-datetime min="2019-01-01" max="2020-06-26" [(ngModel)]="minMaxDate"></ion-datetime>
+      <ion-item>
+        <ion-label>Date and Time selected : {{ minMaxDate }}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-list>
+  <!-- /// -->
+  <ion-list>
+    <ion-item>
+      <ion-title color="primary">Display Format</ion-title>
+    </ion-item>
+
+    <ion-list>
+      ion-label
+      <ion-datetime displayFormat="MMM DD, YYYY" [(ngModel)]="displayFormatDate"></ion-datetime>
+      <ion-item>
+        <ion-label>Date Only : {{ displayFormatDate | date: 'dd/MM/yyyy'}}</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Time Only 12hr format : {{ displayFormatDate | date: 'hh:mm a'}}</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Time Only 24hr format : {{ displayFormatDate | date: 'HH:mm'}}</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Date and Time 12hr format : {{ displayFormatDate | date: 'dd/MM/yyyy hh:mm a'}}</ion-label>      
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Date and Time 24hr format : {{ displayFormatDate | date: 'dd/MM/yyyy HH:mm'}}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-list>
+  <!-- /// -->
+  <!-- <ion-list>
+    <ion-item>
+      <ion-title color="primary">Date and Time Colors</ion-title>
+    </ion-item>
+
+    <ion-list>
+      <ion-item>
+        <ion-label color="secondary">secondary</ion-label>
+        <ion-datetime color="secondary"></ion-datetime>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label color="primary">primary</ion-label>
+        <ion-datetime color="primary"></ion-datetime> 
+      </ion-item>
+  
+      <ion-item>
+        <ion-label color="tertiary">tertiary</ion-label>
+        <ion-datetime color="tertiary"></ion-datetime>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label color="success">success</ion-label>
+        <ion-datetime color="success"></ion-datetime>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label color="warning">warning</ion-label>
+        <ion-datetime color="warning"></ion-datetime>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label color="danger">danger</ion-label>
+        <ion-datetime color="danger"></ion-datetime>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label color="dark">dark</ion-label>
+        <ion-datetime color="dark"></ion-datetime>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label color="medium">medium</ion-label>
+        <ion-datetime color="medium"></ion-datetime>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label color="light">light</ion-label>
+        <ion-datetime color="light"></ion-datetime>
+      </ion-item>
+    </ion-list>
+  </ion-list> -->
+  <!-- /// -->
+  <ion-list>
+    <ion-item>
+      <ion-title color="primary">Date and Time with Selected options</ion-title>
+    </ion-item>
+    
+    <ion-item>
+      <ion-datetime minuteValues="0,15,30,45" dayValues="5,10,15,20,25,30"></ion-datetime>
+    </ion-item>
+  </ion-list>
+  <!-- /// -->
+  <ion-list>
+    <ion-item>
+      <ion-title color="primary">Month and Year selector</ion-title>
+    </ion-item>
+
+    <ion-item>
+      <ion-datetime presentation="month-year"></ion-datetime>
+    </ion-item>
+  </ion-list>
+  <!-- /// -->
+  <ion-list>
+    <ion-item>
+      <ion-title color="primary">Time selector</ion-title>
+    </ion-item>
+
+    <ion-item>
+      <ion-datetime presentation="time"></ion-datetime>
+    </ion-item>
+  </ion-list>
+  <!-- /// -->
+  <ion-list>
+    <ion-item>
+      <ion-title color="primary">Date selector</ion-title>
+    </ion-item>
+
+    <ion-item>
+      <ion-datetime presentation="date" [(ngModel)]="customDate"></ion-datetime>
+    </ion-item>
+  </ion-list>  
+</ion-content>

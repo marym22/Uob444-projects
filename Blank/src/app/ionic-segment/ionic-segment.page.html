@@ -1,0 +1,167 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="#" ></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>ionicSegment</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- /// -->
+  <ion-list>
+    <ion-item>
+      <ion-title color="primary">Default Segment</ion-title>
+    </ion-item>
+
+    <ion-item>
+      <ion-segment>
+        <ion-segment-button value="friends">
+          <ion-label>Friends</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="enemies">
+          <ion-label>Enemies</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-item>
+  </ion-list>
+  <!-- /// -->
+  <ion-list>
+    <ion-item>
+      <ion-title color="primary">Segment with Icons</ion-title>
+    </ion-item>
+
+    <ion-item>
+      <ion-segment>
+        <ion-segment-button value="friends">
+          <ion-icon name="happy"></ion-icon>
+          <ion-label>Friends</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="enemies">
+          <ion-icon name="sad"></ion-icon>
+          <ion-label>Enemies</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-item>
+  </ion-list>
+  <!-- /// -->
+  <ion-list>
+    <ion-item>
+      <ion-title color="primary">Segment with Scrollable Buttons</ion-title>
+    </ion-item>
+
+    <ion-item>
+      <ion-segment scrollable>
+        <ion-segment-button value="friends">
+          <ion-label>Friends</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="enemies">
+          <ion-label>Enemies</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="neutral">
+          <ion-label>Neutral</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="allies">
+          <ion-label>Allies</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="teacher">
+          <ion-label>Teacher</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="student">
+          <ion-label>Student</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="leader">
+          <ion-label>Leader</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-item>
+  </ion-list>
+  <!-- /// -->
+  <ion-list>
+    <ion-item>
+      <ion-title color="primary">Segment with Color</ion-title>
+    </ion-item>
+
+    <ion-segment color="secondary" value="secondary">
+      <ion-segment-button value="secondary">
+        <ion-label>Secondary</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="segment">
+        <ion-label>Segment</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <ion-segment color="primary" value="primary">
+      <ion-segment-button value="primary">
+        <ion-label>Primary</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="segment">
+        <ion-label>Segment</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <ion-segment color="tertiary" value="tertiary">
+      <ion-segment-button value="tertiary">
+        <ion-label>Tertiary</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="segment">
+        <ion-label>Segment</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <ion-segment color="success" value="success">
+      <ion-segment-button value="success">
+        <ion-label>Success</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="segment">
+        <ion-label>Segment</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <ion-segment color="warning" value="warning">
+      <ion-segment-button value="warning">
+        <ion-label>Warning</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="segment">
+        <ion-label>Segment</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <ion-segment color="danger" value="danger">
+      <ion-segment-button value="danger">
+        <ion-label>Danger</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="segment">
+        <ion-label>Segment</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  
+    <ion-segment color="dark" value="dark">
+      <ion-segment-button value="dark">
+        <ion-label>Dark</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="segment">
+        <ion-label>Segment</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <ion-segment color="medium" value="medium">
+      <ion-segment-button value="medium">
+        <ion-label>Medium</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="segment">
+        <ion-label>Segment</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <ion-segment color="light" value="light">
+      <ion-segment-button value="light">
+        <ion-label>Light</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="segment">
+        <ion-label>Segment</ion-label>
+      </ion-segment-button>
+    </ion-segment>    
+  </ion-list>
+</ion-content>

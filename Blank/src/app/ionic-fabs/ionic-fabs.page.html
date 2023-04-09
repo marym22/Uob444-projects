@@ -1,0 +1,176 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="#" ></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>ionicFabs</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- /// -->
+  <ion-list>
+    <ion-item>
+      <ion-title color="primary">Default FAB</ion-title>
+    </ion-item>
+
+    <ion-item>
+      <ion-fab>
+        <ion-fab-button>
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </ion-item>
+  </ion-list>
+  <!-- /// -->
+  <ion-list>
+    <ion-item>
+      <ion-title color="primary">FAB with mini size</ion-title>
+    </ion-item>
+
+    <ion-item>
+      <ion-fab>
+        <ion-fab-button size="small">
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </ion-item>
+  </ion-list>
+  <!-- /// -->
+  <ion-list>
+    <ion-item>
+      <ion-title color="primary">FAB with list</ion-title>
+    </ion-item>
+
+    <ion-item>
+      <ion-fab>
+        <ion-fab-button>
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-list side="end">
+          <ion-fab-button>
+            <ion-icon name="document"></ion-icon>
+          </ion-fab-button>
+          <ion-fab-button>
+            <ion-icon name="color-palette"></ion-icon>
+          </ion-fab-button>
+          <ion-fab-button>
+            <ion-icon name="globe"></ion-icon>
+          </ion-fab-button>
+        </ion-fab-list>
+      </ion-fab>
+    </ion-item>
+  </ion-list>
+  <!-- /// -->
+  <ion-list>
+    <ion-item>
+      <ion-title color="primary">FAB Positioning with list</ion-title>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>top right</ion-label>
+      <ion-fab horizontal="end">
+        <ion-fab-button>
+          <ion-icon name="chevron-down-circle"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>bottom right</ion-label>
+      <ion-fab horizontal="end">
+        <ion-fab-button color="danger">
+          <ion-icon name="chevron-back-circle"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>bottom center</ion-label>
+      <ion-fab horizontal="end">
+        <ion-fab-button color="success">
+          <ion-icon name="chevron-up-circle"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>bottom left</ion-label>
+      <ion-fab horizontal="end">
+        <ion-fab-button color="secondary">
+          <ion-icon name="chevron-forward-circle"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </ion-item>
+  </ion-list>
+
+  <!-- bottom left -->
+  <ion-fab slot="fixed" vertical="bottom" horizontal="start">
+    <ion-fab-button color="secondary">
+      <ion-icon name="chevron-forward-circle"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="end">
+      <ion-fab-button>
+        <ion-icon name="document"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name="color-palette"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name="globe"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+  <!-- bottom center -->
+  <ion-fab slot="fixed" vertical="bottom" horizontal="center">
+    <ion-fab-button color="success">
+      <ion-icon name="chevron-up-circle"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button>
+        <ion-icon name="document"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name="color-palette"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name="globe"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+  <!-- bottom right -->
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button color="danger">
+      <ion-icon name="chevron-back-circle"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="start">
+      <ion-fab-button>
+        <ion-icon name="document"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name="color-palette"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name="globe"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+  <!-- top right -->
+  <ion-fab slot="fixed" vertical="top" horizontal="end">
+    <ion-fab-button>
+      <ion-icon name="chevron-down-circle"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="bottom">
+      <ion-fab-button>
+        <ion-icon name="document"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name="color-palette"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name="globe"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>

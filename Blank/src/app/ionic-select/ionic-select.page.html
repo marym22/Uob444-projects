@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="#" ></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>ionicSelect</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- /// -->
+  <ion-list>
+    <ion-item>
+      <ion-title color="primary">Default Select</ion-title>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Single Selection</ion-label>
+      <ion-select>
+        <ion-select-option value="grapes">Grapes</ion-select-option>
+        <ion-select-option value="strawberries">Strawberries</ion-select-option>
+        <ion-select-option value="pineapple">Pineapple</ion-select-option>
+        <ion-select-option value="cherries">Cherries</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <!-- /// -->
+  <ion-list>
+    <ion-item>
+      <ion-title color="primary">Multiple Select</ion-title>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Multiple Selection</ion-label>
+      <ion-select multiple="true">
+        <ion-select-option value="grapes">Grapes</ion-select-option>
+        <ion-select-option value="strawberries">Strawberries</ion-select-option>
+        <ion-select-option value="pineapple">Pineapple</ion-select-option>
+        <ion-select-option value="cherries">Cherries</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <!-- /// -->
+  <ion-list>
+    <ion-item>
+      <ion-title color="primary">Action Sheet</ion-title>
+    </ion-item>
+
+    <ion-item>
+      <ion-select aria-label="Fruit" interface="action-sheet" placeholder="Select fruit">
+        <ion-select-option value="apples">Apples</ion-select-option>
+        <ion-select-option value="oranges">Oranges</ion-select-option>
+        <ion-select-option value="bananas">Bananas</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <!-- /// -->
+  <ion-list>
+    <ion-item>
+      <ion-title color="primary">Popover</ion-title>
+    </ion-item>
+
+    <ion-item>
+      <ion-select aria-label="Fruit" interface="popover" placeholder="Select fruit">
+        <ion-select-option value="apples">Apples</ion-select-option>
+        <ion-select-option value="oranges">Oranges</ion-select-option>
+        <ion-select-option value="bananas">Bananas</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <!-- /// -->
+  <ion-list>
+    <ion-item>
+      <ion-title color="primary">Filled Select</ion-title>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" >Solid Select</ion-label>
+      <ion-select fill="solid">
+        <ion-select-option value="apple">Apple</ion-select-option>
+        <ion-select-option value="banana">Banana</ion-select-option>
+        <ion-select-option value="orange">Orange</ion-select-option>
+      </ion-select>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">Outline Select</ion-label>
+      <ion-select fill="outline">
+        <ion-select-option value="apple">Apple</ion-select-option>
+        <ion-select-option value="banana">Banana</ion-select-option>
+        <ion-select-option value="orange">Orange</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="#" ></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>ionicGestures</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Gesture</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button (click)="onTap()">Tap</ion-button>
+      <ion-button (click)="onPress()">Press</ion-button>
+      <ion-button (click)="onPan()">Pan</ion-button>
+      <ion-button (click)="onSwipe()">Swipe</ion-button>
+      <ion-button (click)="onRotate()">Rotate</ion-button>
+      <ion-button (click)="onPinch()">Pinch</ion-button>
+      <ion-button (click)="onTouch()">Touch</ion-button>
+      <ion-button (click)="onMove()">Move</ion-button>
+      <ion-button (click)="onEnd()">End</ion-button>
+      <ion-button (click)="onStart()">Start</ion-button>
+      <ion-button (click)="onGesture()">Gesture</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list [inset]="true">To Be Continued...</ion-list>
+</ion-content>

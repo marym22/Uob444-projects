@@ -67,6 +67,54 @@ const routes: Routes = [
     path: 'ionic-badges',
     loadChildren: () => import('./ionic-badges/ionic-badges.module').then( m => m.IonicBadgesPageModule)
   },
+  {
+    path: 'ionic-toggle',
+    loadChildren: () => import('./ionic-toggle/ionic-toggle.module').then( m => m.IonicTogglePageModule)
+  },
+  {
+    path: 'ionic-radio',
+    loadChildren: () => import('./ionic-radio/ionic-radio.module').then( m => m.IonicRadioPageModule)
+  },
+  {
+    path: 'ionic-select',
+    loadChildren: () => import('./ionic-select/ionic-select.module').then( m => m.IonicSelectPageModule)
+  },
+  {
+    path: 'ionic-range',
+    loadChildren: () => import('./ionic-range/ionic-range.module').then( m => m.IonicRangePageModule)
+  },
+  {
+    path: 'ionic-segment',
+    loadChildren: () => import('./ionic-segment/ionic-segment.module').then( m => m.IonicSegmentPageModule)
+  },
+  {
+    path: 'ionic-searchbar',
+    loadChildren: () => import('./ionic-searchbar/ionic-searchbar.module').then( m => m.IonicSearchbarPageModule)
+  },
+  {
+    path: 'ionic-datetime',
+    loadChildren: () => import('./ionic-datetime/ionic-datetime.module').then( m => m.IonicDatetimePageModule)
+  },
+  {
+    path: 'ionic-slides',
+    loadChildren: () => import('./ionic-slides/ionic-slides.module').then( m => m.IonicSlidesPageModule)
+  },
+  {
+    path: 'ionic-fabs',
+    loadChildren: () => import('./ionic-fabs/ionic-fabs.module').then( m => m.IonicFabsPageModule)
+  },
+  {
+    path: 'ionic-gestures',
+    loadChildren: () => import('./ionic-gestures/ionic-gestures.module').then( m => m.IonicGesturesPageModule)
+  },
+  {
+    path: 'ex4',
+    loadChildren: () => import('./ex4/ex4.module').then( m => m.Ex4PageModule)
+  },
+  {
+    path: 'ex5',
+    loadChildren: () => import('./ex5/ex5.module').then( m => m.Ex5PageModule)
+  },
 ];
 
 @NgModule({

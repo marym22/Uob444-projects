@@ -1,0 +1,125 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="#" ></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>ionicSlides</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- /// -->
+  <ion-list>
+    <ion-item>
+      <ion-title color="primary">Default Slides</ion-title>
+    </ion-item>
+
+    <ion-slides>
+      <ion-slide>
+        <ion-label>slide 1</ion-label>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-label>slide 2</ion-label>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-label>slide 3</ion-label>
+      </ion-slide>
+    </ion-slides>  
+  </ion-list>
+  <!-- /// -->
+  <ion-list>
+    <ion-item>
+      <ion-title color="primary">Slides with pager</ion-title>
+    </ion-item>
+
+    <ion-slides pager>
+      <ion-slide><h1>Slides 1</h1></ion-slide>
+      <ion-slide><h1>Slides 2</h1></ion-slide>
+      <ion-slide><h1>Slides 3</h1></ion-slide>
+    </ion-slides>
+  </ion-list>
+  <!-- /// -->
+  <ion-list>
+    <ion-item>
+      <ion-title color="primary">Slides with Background Color</ion-title>
+    </ion-item>
+
+    <ion-slides>
+      <ion-slide style="background-color:red;"><h1>Slides 1</h1></ion-slide>
+      <ion-slide style="background-color:green;"><h1>Slides 2</h1></ion-slide>
+      <ion-slide style="background-color:blue;"><h1>Slides 3</h1></ion-slide>
+    </ion-slides>
+  </ion-list>
+    <!-- /// -->
+    <ion-list>
+      <ion-item>
+        <ion-title color="primary">Slides with Buttons</ion-title>
+      </ion-item>
+      
+      <ion-item>
+        <ion-slides #Slides>
+          <ion-slide><h1>Slides 1</h1></ion-slide>
+          <ion-slide><h1>Slides 2</h1></ion-slide>
+          <ion-slide><h1>Slides 3</h1></ion-slide>
+        </ion-slides>
+        <ion-button (click)="PrevSlide()"> < Prev</ion-button>
+        <ion-button (click)="NextSlide()">Next > </ion-button>
+      </ion-item>
+    </ion-list>
+  <!-- /// -->
+  <ion-list>
+    <ion-item>
+      <ion-title color="primary">Slides with images</ion-title>
+    </ion-item>
+
+    <ion-slides>
+      <ion-slide>
+        <ion-img src="https://images.lululemon.com/is/image/lululemon/LM9ANHS_061719_1" alt="" width="200 px"></ion-img>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-img src="https://images.lululemon.com/is/image/lululemon/LW9EF2S_012826_1" alt="" width="200 px"></ion-img>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-img src="https://images.lululemon.com/is/image/lululemon/LM9ANHS_043646_1" alt="" width="200 px"></ion-img>
+      </ion-slide>
+    </ion-slides>
+  </ion-list>
+  <!-- /// -->
+  <ion-list>
+    <ion-item>
+      <ion-title color="primary">Slides with images and pager</ion-title>
+    </ion-item>
+
+    <ion-slides pager>
+      <ion-slide>
+        <ion-img src="https://images.lululemon.com/is/image/lululemon/LM9ANHS_061719_1" alt="" width="200 px"></ion-img>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-img src="https://images.lululemon.com/is/image/lululemon/LW9EF2S_012826_1" alt="" width="200 px"></ion-img>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-img src="https://images.lululemon.com/is/image/lululemon/LM9ANHS_043646_1" alt="" width="200 px"></ion-img>
+      </ion-slide>
+    </ion-slides>
+  </ion-list>
+    <!-- <ion-slides pager>
+           <ion-slide style="background-color: green">
+              <h2>Slide 1</h2>
+            </ion-slide>
+          
+            <ion-slide style="background-color: blue">
+              <h2>Slide 2</h2>
+            </ion-slide>
+          
+            <ion-slide style="background-color: red">
+              <h2>Slide 3</h2>
+            </ion-slide>
+      </ion-slides>     -->
+</ion-content>

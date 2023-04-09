@@ -1,0 +1,109 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="#" ></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>ionicRadio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-title color="primary">Default Radio Button</ion-title>
+    </ion-item>
+
+    <ion-radio-group>
+      <ion-radio value="grapes"></ion-radio>
+      <ion-label>Grapes</ion-label>
+      <br/>
+      <ion-radio value="strawberries"></ion-radio>
+      <ion-label>Strawberries</ion-label>
+      <br />
+      <ion-radio value="pineapple"></ion-radio>
+      <ion-label>Pineapple</ion-label>
+      <br />
+      <ion-radio value="cherries"></ion-radio>
+      <ion-label>Cherries</ion-label>
+    </ion-radio-group>
+  </ion-list>  
+  
+  <ion-list>
+    <ion-item>
+      <ion-title color="primary">Radio Button With Item</ion-title>
+    </ion-item>
+
+    <ion-radio-group>
+      <ion-item>
+        <ion-radio value="grapes"></ion-radio>
+        <ion-label>Grapes</ion-label>
+      </ion-item>
+      <br/>
+      <ion-item>
+        <ion-radio value="strawberries"></ion-radio>
+        <ion-label>Strawberries</ion-label>
+      </ion-item>
+      <br />
+      <ion-item>
+        <ion-radio value="pineapple"></ion-radio>
+        <ion-label>Pineapple</ion-label>
+      </ion-item>
+      <br />
+      <ion-item>
+        <ion-radio value="cherries"></ion-radio>
+        <ion-label>Cherries</ion-label>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>  
+
+  <ion-list>
+    <ion-item>
+      <ion-title color="primary">Radio Button With Item And Icon</ion-title>
+    </ion-item>
+
+    <ion-radio-group>
+      <ion-item>
+        <ion-radio value="grapes"></ion-radio>
+        <ion-label>Grapes</ion-label>
+        <ion-icon name="logo-apple" slot="start"></ion-icon>
+      </ion-item>
+      <br/>
+      <ion-item>
+        <ion-radio value="strawberries"></ion-radio>
+        <ion-label>Strawberries</ion-label>
+        <ion-icon name="logo-android" slot="start"></ion-icon>
+      </ion-item>
+      <br />
+      <ion-item>
+        <ion-radio value="pineapple"></ion-radio>
+        <ion-label>Pineapple</ion-label>
+        <ion-icon name="logo-windows" slot="start"></ion-icon>
+      </ion-item>
+      <br />
+      <ion-item>
+        <ion-radio value="cherries"></ion-radio>
+        <ion-label>Cherries</ion-label>
+        <ion-icon name="logo-chrome" slot="start"></ion-icon>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <ion-title color="primary">Radio Button Positioning</ion-title>
+    </ion-item>
+
+    <ion-radio-group>
+      <ion-item>
+        <ion-radio value="start" slot="start"></ion-radio>
+        <ion-label>Start</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-radio value="end" slot="end"></ion-radio>
+        <ion-label>End</ion-label>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+</ion-content>
