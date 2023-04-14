@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Car, DataService } from '../data.service';
 
 @Component({
   selector: 'app-carview',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./carview.page.scss'],
 })
 export class CarviewPage implements OnInit {
-
-  constructor() { }
+  public carList: Car[] = [];
+  constructor(public dataSrv: DataService) { }
 
   ngOnInit() {
+    this.carList = this.dataSrv.carList
   }
 
 }
