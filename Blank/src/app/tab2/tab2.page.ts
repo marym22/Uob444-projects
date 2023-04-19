@@ -1,3 +1,4 @@
+import { CarService,Car } from '../car.service';
 import { Component } from '@angular/core';
 
 
@@ -7,9 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
+  public carList: Car[] = [];
+  constructor(public dataSrv:CarService) {}
 
-  constructor() {}
-
-  
+  ngOnInit() {
+    this.carList = this.dataSrv.carList
+  }
   
 }
