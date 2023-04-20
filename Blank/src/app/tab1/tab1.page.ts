@@ -4,7 +4,6 @@ import { AuthService,users } from '../auth.service';
 import { FormBuilder,Validators } from '@angular/forms';
 
 
-
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',

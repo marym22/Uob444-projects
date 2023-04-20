@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { Storage } from '@ionic/storage-angular';
+import { Injectable, OnInit } from '@angular/core';
+//import { Storage } from '@ionic/storage-angular';
 import { AlertController } from '@ionic/angular';
 import { AngularFirestore} from '@angular/fire/compat/firestore';
 import { AngularFirestoreCollection } from '@angular/fire/compat/firestore';
@@ -8,7 +8,6 @@ import { map, take } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { NavController } from '@ionic/angular';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-
 export interface users{
   id?:string,
 UserName:string,
@@ -16,17 +15,14 @@ Email:string,
 password:string,
 confirmpass:string
 }
-
-
-
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class AuthService implements OnInit {
   public user: Observable<users[]>;
   public userCollection:AngularFirestoreCollection<users>;
 
-  constructor(public s:Storage,public auth:AngularFireAuth,public afs:AngularFirestore) {
+  constructor(public auth:AngularFireAuth,public afs:AngularFirestore) {
     this.userCollection=this.afs.collection<users>('USERS');
     this.user=this.userCollection.snapshotChanges().pipe(
     map(actions=>{
