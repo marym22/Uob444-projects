@@ -8,11 +8,6 @@ import { Component } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-  public carList: Car[] = [];
-  constructor(public dataSrv:CarService) {}
 
-  ngOnInit() {
-    this.carList = this.dataSrv.carList
-  }
   
 }
