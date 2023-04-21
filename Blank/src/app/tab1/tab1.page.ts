@@ -12,11 +12,15 @@ import { CarService,Car } from '../car.service';
 })
 export class Tab1Page { 
   searchTerm!: string;
-
+  filteredShowrooms: any[] = [];
   onSearchInput(event: any) {
-    console.log(event.target.value);
+    const searchTerm = event.target.value.toLowerCase();
+    this.filteredShowrooms = this.carService.showrooms.filter(showroom => {
+      return showroom.name.toLowerCase().includes(searchTerm) ||
+             showroom.address.toLowerCase().includes(searchTerm);
+    });
   }
-
+  
   onSlideDidChange(event: CustomEvent<any>) {
     console.log(event.detail);
   }

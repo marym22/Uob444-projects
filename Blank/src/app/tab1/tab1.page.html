@@ -13,13 +13,26 @@
 <ion-content>
   <ion-item>
     <ion-title>Search</ion-title>
-    <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="onSearchInput($event)"></ion-searchbar>
+    <ion-searchbar debounce="800" animated="true"  [(ngModel)]="searchTerm" (ionInput)="onSearchInput($event)"></ion-searchbar>
   </ion-item>
   <ion-slides pager="true" autoplay="true" keyboard="true" class="slide-container" >
     <ion-slide *ngFor="let image of this.carService.showrooms">
       <img src="{{image.image}}" class="slide-image">
     </ion-slide>
   </ion-slides>
+
+  <h1>Filtered Result:</h1>
+
+  <ion-item *ngFor="let filter of filteredShowrooms ">
+    <ion-thumbnail>
+      <img src="{{filter.image}}">
+    </ion-thumbnail>
+    <ion-label>
+      <h2>{{filter.name}}</h2>
+      <h3>{{filter.address}}</h3>
+      <h4>{{filter.phone}}</h4>
+    </ion-label>
+  </ion-item>
 
   <h1>Showrooms Nearby You!</h1>
   <ion-card *ngFor="let showroom of this.carService.showrooms">
