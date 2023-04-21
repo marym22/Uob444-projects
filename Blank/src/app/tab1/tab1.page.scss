@@ -6,3 +6,16 @@ ion-header{
       font-weight: bold;
     }
 }
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+}
+
+.slide-container {
+  height: 100px; /* set a fixed height */
+  margin:20px;
+  border-radius: 5px;
+}

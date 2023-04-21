@@ -10,19 +10,28 @@
 
 
 <ion-content>
-  <ion-slides pager="true" autoplay="true">
+  <ion-slides pager="true" autoplay="true" keyboard="true" class="slide-container">
     <ion-slide>
-      <img src="assets/slide1.jpg">
-      <h2>Slide 1</h2>
+      <img src="assets/showroom1.jpg" class="slide-image">
     </ion-slide>
     <ion-slide>
-      <img src="assets/slide2.jpg">
-      <h2>Slide 2</h2>
+      <img src="assets/showroom2.jpg" class="slide-image">
     </ion-slide>
     <ion-slide>
-      <img src="assets/slide3.jpg">
-      <h2>Slide 3</h2>
+      <img src="assets/showroom3.jpg" class="slide-image">
     </ion-slide>
   </ion-slides>
 
+  <h1>Showrooms Nearby You!</h1>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Location</ion-card-subtitle>
+      <ion-card-title>Address</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>Phone Number</p>
+      <h2>Distance: 2Km</h2>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
