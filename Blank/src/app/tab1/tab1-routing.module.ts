@@ -10,6 +10,10 @@ const routes: Routes = [
   {
     path: 'showroom',
     loadChildren: () => import('./showroom/showroom.module').then( m => m.ShowroomPageModule)
+  },
+  {
+    path: 'showroom/:id',
+    loadChildren: () => import('./showroom/showroom.module').then( m => m.ShowroomPageModule)
   }
 ];
 
