@@ -11,8 +11,16 @@ import { CarService,Car } from '../car.service';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page { 
+  searchTerm!: string;
+
+  onSearchInput(event: any) {
+    console.log(event.target.value);
+  }
+
   onSlideDidChange(event: CustomEvent<any>) {
     console.log(event.detail);
   }
+
+  constructor(private authService: AuthService, public carService: CarService, private navCtrl: NavController) {}
   
 }

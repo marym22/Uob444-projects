@@ -1,8 +1,9 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="primary">
+  <ion-toolbar color="primary" mode="md">
     <ion-title>      View Showroom   
     <ion-icon name="chevron-down-outline"></ion-icon>  
     </ion-title>
+    
     
   </ion-toolbar>
 </ion-header>
@@ -10,30 +11,45 @@
 
 
 <ion-content>
-  <ion-slides pager="true" autoplay="true" keyboard="true" class="slide-container">
-    <ion-slide>
-      <img src="assets/showroom1.jpg" class="slide-image">
-    </ion-slide>
-    <ion-slide>
-      <img src="assets/showroom2.jpg" class="slide-image">
-    </ion-slide>
-    <ion-slide>
-      <img src="assets/showroom3.jpg" class="slide-image">
+  <ion-item>
+    <ion-title>Search</ion-title>
+    <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="onSearchInput($event)"></ion-searchbar>
+  </ion-item>
+  <ion-slides pager="true" autoplay="true" keyboard="true" class="slide-container" >
+    <ion-slide *ngFor="let image of this.carService.showrooms">
+      <img src="{{image.image}}" class="slide-image">
     </ion-slide>
   </ion-slides>
 
   <h1>Showrooms Nearby You!</h1>
-  <ion-card>
+  <ion-card *ngFor="let showroom of this.carService.showrooms">
+    <img src="{{showroom.image}}" />
     <ion-card-header>
-      <ion-card-subtitle>Location</ion-card-subtitle>
-      <ion-card-title>Address</ion-card-title>
+      <ion-card-subtitle>{{showroom.address}}</ion-card-subtitle>
+      <ion-card-title>{{showroom.name}}</ion-card-title>
     </ion-card-header>
-<!-- future proposal to change pagination colors and light colored border bottom -->
+  
     <ion-card-content>
-      <p>Phone Number</p>
-      <h2>Distance: 2KM</h2>
+      <p>Phone Number: {{showroom.phone}}</p>
+      <ion-grid>
+        <ion-row>
+          <ion-col *ngFor="let star of [1, 2, 3, 4, 5]">
+            <ion-icon name="star" color="dark" [style.opacity]="star <= showroom.rating ? '1' : '0.3'"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <p>Distance: {{showroom.distance}}</p>
     </ion-card-content>
+  
+    <ion-row>
+      <ion-col>
+        <ion-button routerLink="/showroom/{{ showroom.id }}" expand="block">View Details</ion-button>
+      </ion-col>
+    </ion-row>
   </ion-card>
+  
+
+  <!-- this card should update with the slider -->
 
   <ion-list>
     <ion-list-header class="ion-no-margin-bottom">
@@ -44,23 +60,25 @@
       <p>Discover more showrooms</p>
       </ion-label>
     </ion-list-header>
-    <ion-item lines="none">
+    <ion-item lines="none" *ngFor="let showroom of this.carService.showrooms">
       <ion-thumbnail slot="start">
-        <img src="assets/showroom1.jpg">
+        <img src="{{showroom.image}}">
       </ion-thumbnail>
       <ion-label>
-        <h1>Motor City</h1>
-        <h2>Address: Manamma</h2>
-        <h3>Phone Number: 17515151</h3>
-        <h4>Rating
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star"></ion-icon>
-          <ion-icon name="star-outline"></ion-icon>
-          <ion-icon name="star-outline"></ion-icon>
-          <ion-icon name="star-outline"></ion-icon>
-        </h4>
-        <p>Distance: 2KM Away</p>
+        <h1>{{showroom.name}}</h1>
+        <h2>Address: {{showroom.address}}</h2>
+        <h3>Phone Number: {{showroom.phone}}</h3>
+        <ion-grid>
+          <ion-row>
+            <ion-col *ngFor="let star of [1, 2, 3, 4, 5]">
+              <ion-icon name="star" color="dark" [style.opacity]="star <= showroom.rating ? '1' : '0.3'"></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <p>Distance: {{showroom.distance}}</p>
         </ion-label>
+        <ion-button routerLink="/showroom/{{ showroom.id }}">View details</ion-button> 
+        <!-- Currently doesnt work!!! -->
     </ion-item>
     
   </ion-list>

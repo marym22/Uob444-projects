@@ -4,6 +4,57 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CarService {
+
+  public showrooms = [
+    {
+      id: 1,
+      name: "Al Zayani Trading Co. - BMW",
+      address: "Salmabad",
+      phone: "+973 1745 9944",
+      distance: "4.9 km",
+      rating: 4.4,
+      image: "assets/zayani.jpeg",
+    },
+    {
+      id: 2,
+      name: "Euro Motors",
+      address: "Sitra",
+      phone: "+973 1775 0750",
+      distance: "4.7 km",
+      rating: 4.0,
+      image: "assets/euromotors.jpg",
+    },
+    {
+      id: 3,
+      name: "Almoayyed Motors",
+      phone: "+973 1773 3733",
+      address: "Sitra",
+      distance: "4.7 km",
+      rating: 4.0,
+      image: "assets/almoayyed.jpg",
+    },
+    {
+      id: 4,
+      name: "MOTORCITY - Sitra Showroom",
+      phone: "+973 1750 0900",
+      address:"Manama",
+      distance: "8.0 km",
+      rating: 4.1,
+      image: "assets/motorcity.jpg",
+    },
+    {
+      id: 5,
+      name: "Mercedes-Benz Al Haddad Motors Showroom",
+      phone: "+973 1778 5454",
+      address: "Tubli",
+      distance: "4.8 km",
+      image: "assets/alhaddad.jpg",
+      rating: 4.8
+    },  
+  ];
+  
+  
+
   public carList: Car[] = [
     { type: 'SUV', manufacturer: 'Toyota', model: 'Land Cruiser', color: 'White', mileage: 10000, engine: '4.5L V8', specifications: ['4WD', 'Automatic', '4 Doors', '5 Seats'], numberOfSeats: 5, features: ['Air Conditioning', 'Power Steering', 'Power Windows', 'Power Locks', 'Power Mirrors', 'Cruise Control', 'Tilt Steering', 'AM/FM Radio', 'CD Player', 'MP3 Player', 'Bluetooth', 'Backup Camera', 'Navigation System', 'Keyless Entry', 'Keyless Start', 'Heated Seats', 'Leather Seats', 'Sunroof', 'Alloy Wheels'], price: 22000, image: 'https://akm-img-a-in.tosshub.com/businesstoday/images/story/202002/lamborghini_660_140220101539.jpg' },
     { type: 'sedan', manufacturer: 'Toyota', model: 'Camry', color: 'White', mileage: 10000, engine: '2.5L I4', specifications: ['FWD', 'Automatic', '4 Doors', '5 Seats'], numberOfSeats: 5, features: ['Air Conditioning', 'Power Steering', 'Power Windows', 'Power Locks', 'Power Mirrors', 'Cruise Control', 'Tilt Steering', 'AM/FM Radio', 'CD Player', 'MP3 Player', 'Bluetooth', 'Backup Camera', 'Navigation System', 'Keyless Entry', 'Keyless Start', 'Heated Seats', 'Leather Seats', 'Sunroof', 'Alloy Wheels'], price: 7000, image: 'https://akm-img-a-in.tosshub.com/businesstoday/images/story/202002/lamborghini_660_140220101539.jpg' },
