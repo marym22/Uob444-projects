@@ -11,5 +11,8 @@ import { CarService,Car } from '../car.service';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page { 
-
+  onSlideDidChange(event: CustomEvent<any>) {
+    console.log(event.detail);
+  }
+  
 }

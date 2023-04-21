@@ -1,6 +1,8 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
-    <ion-title>      View Car    </ion-title>
+    <ion-title>      View Showroom   
+    <ion-icon name="chevron-down-outline"></ion-icon>  
+    </ion-title>
     
   </ion-toolbar>
 </ion-header>
@@ -8,5 +10,19 @@
 
 
 <ion-content>
+  <ion-slides pager="true" autoplay="true">
+    <ion-slide>
+      <img src="assets/slide1.jpg">
+      <h2>Slide 1</h2>
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/slide2.jpg">
+      <h2>Slide 2</h2>
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/slide3.jpg">
+      <h2>Slide 3</h2>
+    </ion-slide>
+  </ion-slides>
 
 </ion-content>
