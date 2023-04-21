@@ -36,7 +36,7 @@
 
   <h1>Showrooms Nearby You!</h1>
   <ion-card *ngFor="let showroom of this.carService.showrooms">
-    <img src="{{showroom.image}}" />
+    <img src="{{showroom.image}}" width="100%" />
     <ion-card-header>
       <ion-card-subtitle>{{showroom.address}}</ion-card-subtitle>
       <ion-card-title>{{showroom.name}}</ion-card-title>
