@@ -15,16 +15,27 @@ export class Tab1Page {
   filteredShowrooms: any[] = [];
   onSearchInput(event: any) {
     const searchTerm = event.target.value.toLowerCase();
+    if(searchTerm!=''){
     this.filteredShowrooms = this.carService.showrooms.filter(showroom => {
       return showroom.name.toLowerCase().includes(searchTerm) ||
              showroom.address.toLowerCase().includes(searchTerm);
+    
     });
+    }
+    else{
+      this.filteredShowrooms=[];
+    }
+    
+  
   }
   
   onSlideDidChange(event: CustomEvent<any>) {
     console.log(event.detail);
   }
 
-  constructor(private authService: AuthService, public carService: CarService, private navCtrl: NavController) {}
+  constructor(private authService: AuthService, public carService: CarService, private navCtrl: NavController) {
+
+
+  }
   
 }
