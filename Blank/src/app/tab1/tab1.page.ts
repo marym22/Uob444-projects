@@ -33,7 +33,7 @@ export class Tab1Page {
     console.log(event.detail);
   }
 
-  constructor(private authService: AuthService, public carService: CarService, private navCtrl: NavController) {
+  constructor(public authService: AuthService, public carService: CarService, private navCtrl: NavController) {
 
 
   }

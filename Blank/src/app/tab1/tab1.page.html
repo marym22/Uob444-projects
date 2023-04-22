@@ -35,7 +35,7 @@
   </ion-item>
 
   <h1>Showrooms Nearby You!</h1>
-  <ion-card *ngFor="let showroom of this.carService.showrooms">
+  <ion-card *ngFor="let showroom of carService.showrooms">
     <img src="{{showroom.image}}" width="100%" />
     <ion-card-header>
       <ion-card-subtitle>{{showroom.address}}</ion-card-subtitle>
@@ -56,7 +56,7 @@
   
     <ion-row>
       <ion-col>
-        <ion-button routerLink="" expand="block">View Details</ion-button>
+        <ion-button routerLink="showroom/{{ showroom.id }}" expand="block">View Details</ion-button>
         <!-- {{ showroom.id }} -->
       </ion-col>
     </ion-row>
@@ -74,7 +74,7 @@
       <p>Discover more showrooms</p>
       </ion-label>
     </ion-list-header>
-    <ion-item lines="none" *ngFor="let showroom of this.carService.showrooms">
+    <ion-item lines="none" *ngFor="let showroom of carService.showrooms">
       <ion-thumbnail slot="start">
         <img src="{{showroom.image}}">
       </ion-thumbnail>
@@ -91,7 +91,7 @@
         </ion-grid>
         <p>Distance: {{showroom.distance}}</p>
         </ion-label>
-        <ion-button routerLink="/showroom/{{ showroom.id }}">View details</ion-button> 
+        <ion-button routerLink="showroom/{{ showroom.id }}">View details</ion-button> 
         <!-- Currently doesnt work!!! -->
     </ion-item>
     
