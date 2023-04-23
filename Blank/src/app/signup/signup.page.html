@@ -18,10 +18,20 @@
             <ion-label position="floating">User Name</ion-label>
             <ion-input type="text" formControlName="userUserName"></ion-input>
           </ion-item>
-            <p *ngIf="LoginForm.controls['userUserName'].hasError('required') && LoginForm.controls['userUserName'].touched" style="color:red">Sorry, field username is required!</p>
-            <p *ngIf="LoginForm.controls['userUserName'].hasError('pattern') && LoginForm.controls['userUserName'].touched" style="color:red">Sorry, only small, capital letters and numbers are allowed!</p>
-            <p *ngIf="LoginForm.controls['userUserName'].hasError('minlength') && LoginForm.controls['userUserName'].touched" style="color:red">minimum username length is 8!</p>
-            <p style="color:red" *ngIf="LoginForm.controls['userUserName'].hasError('maxlength') && LoginForm.controls['userUserName'].touched">Sorry, maximum username length is 30!</p>
+          <ion-item *ngIf="LoginForm.controls['userUserName'].hasError('required') && LoginForm.controls['userUserName'].touched" style="color:red">
+           <p >Sorry, field username is required!</p>
+           </ion-item>
+           <ion-item *ngIf="LoginForm.controls['userUserName'].hasError('pattern') && LoginForm.controls['userUserName'].touched" style="color:red">
+            <p >Sorry, only small, capital letters and numbers are allowed!</p>
+          </ion-item>
+          <ion-item *ngIf="LoginForm.controls['userUserName'].hasError('minlength') && LoginForm.controls['userUserName'].touched" style="color:red">
+            <p>minimum username length is 8!</p>
+          </ion-item>
+          <ion-item  *ngIf="LoginForm.controls['userUserName'].hasError('maxlength') && LoginForm.controls['userUserName'].touched">
+            <p style="color:red">Sorry, maximum username length is 30!</p>
+</ion-item>
+
+
         </ion-col>
       </ion-row>
       <ion-row>
