@@ -7,12 +7,14 @@ import { map, take } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { NavController } from '@ionic/angular';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { ToastController } from '@ionic/angular';
 
 
 export interface users{
   id?:string,
 UserName:string,
 Email:string,
+phone:string,
 password:string,
 confirmpass:string
 }
@@ -26,7 +28,7 @@ export class AuthService implements OnInit {
   public user: Observable<users[]>;
   public userCollection:AngularFirestoreCollection<users>;
 
-  constructor(public auth:AngularFireAuth,public afs:AngularFirestore,public n:NavController) {
+  constructor(public auth:AngularFireAuth,public afs:AngularFirestore,public n:NavController,public t:ToastController) {
     this.userCollection=this.afs.collection<users>('USERS');
     this.user=this.userCollection.snapshotChanges().pipe(
     map(actions=>{
@@ -47,13 +49,14 @@ adduser(us:users):Promise<DocumentReference>{
   }
 
   signin(email:string,password:string){
+
 this.auth.signInWithEmailAndPassword(email,password)
 .then(()=>{alert('login in succssfully');this.n.navigateForward("/tabs/tab1")})
 .catch((error)=>{alert(error)});
   }
 signup(email:string,pass:string,user:users){
   this.auth.createUserWithEmailAndPassword(email,pass)
-    .then(()=>{this.adduser(user).then((response)=>{
+  .then(()=>{this.adduser(user).then((response)=>{
       alert("Inserted Successfully");this.n.navigateForward("/tabs/tab1")
       user={}as users;
      })
@@ -65,6 +68,12 @@ signup(email:string,pass:string,user:users){
   updatepro(us: users): Promise<void> {
         return this.userCollection.doc(us.id).update({ UserName: us.UserName, Email: us.Email });
       }
-    
 
+     async send(email:string){
+        const mess1=await this.t.create({
+          message:'Reset Password Send Via Email',
+          duration:3000
+        });
+      this.auth.sendPasswordResetEmail(email).then((res)=>{mess1.present()}).catch((err)=>{alert(err)});
+      }
 }
