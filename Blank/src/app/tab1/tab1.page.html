@@ -37,7 +37,7 @@
   </ion-item>
 
   <h1>Showrooms Nearby You!</h1>
-  <ion-card *ngFor="let showroom of carService.showrooms">
+  <ion-card *ngFor="let showroom of carService.showroom|async">
     <img src="{{showroom.image}}" width="100%" />
     <ion-card-header>
       <ion-card-subtitle>{{showroom.address}}</ion-card-subtitle>
@@ -76,7 +76,7 @@
       <p>Discover more showrooms</p>
       </ion-label>
     </ion-list-header>
-    <ion-item lines="none" *ngFor="let showroom of carService.showrooms">
+    <ion-item lines="none" *ngFor="let showroom of carService.showroom|async">
       <ion-thumbnail slot="start">
         <img src="{{showroom.image}}">
       </ion-thumbnail>

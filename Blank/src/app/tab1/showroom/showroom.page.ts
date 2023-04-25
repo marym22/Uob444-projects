@@ -8,11 +8,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ShowroomPage implements OnInit {
   public carList: Car[] = [];
-  constructor(public dataSrv:CarService, private route:ActivatedRoute) {}
+  shoowid:any;
+  constructor(public dataSrv:CarService, private route:ActivatedRoute) {
+   this.shoowid=this.route.snapshot.paramMap.get('id');
+  }
 
   ngOnInit() {
-    this.carList = this.dataSrv.carList;
-    const id = this.route.snapshot.paramMap.get('id');
+   // this.carList = this.dataSrv.carList;
+   // const id = this.route.snapshot.paramMap.get('id');
 
   }
   searchResults: Car[] = [];
