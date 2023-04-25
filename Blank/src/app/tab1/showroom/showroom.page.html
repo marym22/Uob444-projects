@@ -55,68 +55,6 @@
   <ion-button expand="block" (click)="search()">Search</ion-button>
 
 
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>
-              {{ carList[0].model }}
-            </ion-card-title>
-            <ion-card-subtitle>
-              {{ carList[0].price }}
-            </ion-card-subtitle>
-          </ion-card-header>
-          <img src="{{ carList[0].image }}">
-          <ion-card-content>
-            <p>{{ carList[0].specifications }}</p>
-          </ion-card-content>
-          <div text-right padding>
-            <ion-button fill="clear" color="primary"></ion-button>
-          </div>
-          <ion-buttons>
-            <ion-button fill="clear" color="primary">
-              <ion-icon name="arrow-forward"></ion-icon>
-            </ion-button>
-            <ion-button>
-              <ion-icon name="heart"></ion-icon>Favorite
-            </ion-button>
-            <ion-button>
-              <ion-icon name="share"></ion-icon>TEST DRIVE
-            </ion-button>
-          </ion-buttons>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-list>
-          <ion-item *ngFor="let car of dataSrv.carList">
-            <ion-thumbnail slot="start">
-              <img src="{{ car.image }}" />
-            </ion-thumbnail>
-            <ion-label>
-              <h2>{{ car.model }}</h2>
-              <h3>{{ car.type }}</h3>
-              <p>{{ car.features }}</p>
-            </ion-label>
-            <ion-buttons>
-              <ion-button fill="clear" color="primary">
-                <ion-icon name="arrow-forward"></ion-icon>
-              </ion-button>
-              <ion-button>
-                <ion-icon name="heart"></ion-icon>Favorite
-              </ion-button>
-              <ion-button>
-                <ion-icon name="share"></ion-icon>TEST DRIVE
-              </ion-button>
-            </ion-buttons>
-          </ion-item>
-
-        </ion-list>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
   <!-- //ORIGINALLY -->
   <ion-list>
     <ion-item *ngFor="let car of carList">
@@ -128,9 +66,13 @@
           <p>{{car.specifications}}</p>
         </ion-card-header>
         <ion-card-content>
-          <h1>{{car.color}}</h1>
-          <p>{{car.features}}</p>
-          <p>{{car.price}}</p>
+          <h1>Color: {{car.color}}</h1>
+          <h1>Mileage: {{car.mileage}}</h1>
+          <h1>Features:</h1>
+          <ul>
+            <li *ngFor="let feature of car.features">{{feature}}</li>
+          </ul>          
+          <p>Price: {{car.price}}</p>
         </ion-card-content>
         <ion-buttons>
           <ion-button fill="clear" color="primary">
