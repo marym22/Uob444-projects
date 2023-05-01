@@ -10,7 +10,8 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-
+import { EditPageModule } from './tab1Admin/edit/edit.module';
+import { AddcarPageModule } from './tab1Admin/addcar/addcar.module';
 const firebaseConfig = {
   apiKey: "AIzaSyAQa-sstdNK74uYX32U5UPOL-NRkxVvRjM",
   authDomain: "project-444-f1ccb.firebaseapp.com",
@@ -25,7 +26,7 @@ const firebaseConfig = {
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(), AppRoutingModule,
-    AngularFireModule.initializeApp(firebaseConfig),AngularFirestoreModule
+    AngularFireModule.initializeApp(firebaseConfig),AngularFirestoreModule,EditPageModule
 
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],

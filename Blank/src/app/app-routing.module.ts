@@ -15,7 +15,11 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
-  
+  {
+    path: '',
+    loadChildren: () => import('./tabsAdmin/tabs2.module').then(m => m.TabsPageModule)
+  },
+
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
@@ -24,9 +28,17 @@ const routes: Routes = [
     path: 'signup',
     loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
   },
- 
+  {
+    path: 'edit',
+    loadChildren: () => import('./tab1Admin/edit/edit.module').then( m => m.EditPageModule)
+  },  {
+    path: 'addcar',
+    loadChildren: () => import('./tab1Admin/addcar/addcar.module').then( m => m.AddcarPageModule)
+  },
+
 
   
+ 
 
 ];
 @NgModule({

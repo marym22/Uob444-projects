@@ -4,6 +4,9 @@ import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {AngularFirestoreCollection} from '@angular/fire/compat/firestore';
 import { DocumentReference } from '@angular/fire/compat/firestore';
 import {map, take} from 'rxjs/operators';
+import { AlertController } from '@ionic/angular';
+import { of } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 export interface ShowRooms{
   id?:string,
   name:string,
@@ -14,6 +17,7 @@ export interface ShowRooms{
   rating:number
 }
 export interface Cars{
+  id?:string,
   color:string,
   engine:string,
   features:any,
@@ -38,7 +42,7 @@ public showroomsCollectionRef:AngularFirestoreCollection<ShowRooms>;
 public car:Observable<Cars[]>;
 public carCollectionRef:AngularFirestoreCollection<Cars>;
 
-constructor(public afs:AngularFirestore){
+constructor(public afs:AngularFirestore,public a:AlertController){
   this.showroomsCollectionRef = this.afs.collection('showroom');
    this.showroom = this.showroomsCollectionRef.snapshotChanges().pipe(
           map(actions => {
@@ -61,8 +65,82 @@ constructor(public afs:AngularFirestore){
       })
     );
 }
-getMemberById(id: string): Observable<any> {
-  return this.showroomsCollectionRef.doc(id).get().pipe(
+/*getCarsById(id: string): Observable<any> {
+  return this.carCollectionRef.doc(id).get().pipe(
+    map((doc) => {
+      if(doc.exists){
+        return {id: doc.id, ...doc.data()}
+      }else {
+        return null
+      }
+    })
+  )
+}*/
+
+async deletecar1(id:string){
+const alt=await this.a.create({
+  message:'Are you sure you want to delete this car?',
+  buttons: [
+    {
+      text: 'Yes',
+      handler: () => {this.carCollectionRef.doc(id).delete() }
+    },
+    {
+      text: 'Cancel',
+      handler: () => { }
+    }
+  ]
+});
+alert(id);
+alt.present();
+}
+
+addnewcar1(carnew:any){
+      //return this.carCollectionRef.add(carnew); 
+}
+    
+
+
+
+getCar(id: string): Observable<Cars> {
+  return this.carCollectionRef.doc<Cars>(id).valueChanges().pipe(
+    map(idea => {
+     
+      if (idea) {
+        //alert(idea.type);
+        idea.id = id;
+        return idea as Cars; // add type assertion here
+      } else {
+        throw new Error(`Document with ID ${id} does not exist.`);
+      }
+     
+    })
+  );
+}
+    
+  
+
+
+updatecarinfo(car:any){
+this.carCollectionRef.doc(car.id).update({
+  color:car.color,
+  engine:car.engine,
+  features:car.features,
+  image:car.image,
+  manufacturer:car.manufacturer,
+  mileage:car.mileage,
+  model:car.model,
+  numberOfSeats:car.numberOfSeats,
+  price:car.price,
+  showroom:car.showroom,
+  specifications:car.specifications,
+  type:car.type
+});
+
+}
+
+getCarsById(id: string): Observable<any> {
+  return this.carCollectionRef.doc(id).get().pipe(
     map((doc) => {
       if(doc.exists){
         return {id: doc.id, ...doc.data()}
@@ -72,6 +150,9 @@ getMemberById(id: string): Observable<any> {
     })
   )
 }
+
+
+
 
 public carList: Car[] = [
   { showroom: 3,type: 'SUV', manufacturer: 'Toyota', model: 'Land Cruiser', color: 'White', mileage: 10000, engine: '4.5L V8', specifications: ['4WD', 'Automatic', '4 Doors', '5 Seats'], numberOfSeats: 5, features: ['Air Conditioning', 'Power Steering', 'Power Windows', 'Power Locks', 'Power Mirrors', 'Cruise Control', 'Tilt Steering', 'AM/FM Radio', 'CD Player', 'MP3 Player', 'Bluetooth', 'Backup Camera', 'Navigation System', 'Keyless Entry', 'Keyless Start', 'Heated Seats', 'Leather Seats', 'Sunroof', 'Alloy Wheels'], price: 22000, image: 'https://akm-img-a-in.tosshub.com/businesstoday/images/story/202002/lamborghini_660_140220101539.jpg' },

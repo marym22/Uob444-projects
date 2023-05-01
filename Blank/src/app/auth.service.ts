@@ -8,8 +8,7 @@ import { Observable } from 'rxjs';
 import { NavController } from '@ionic/angular';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { ToastController } from '@ionic/angular';
-
-
+import { LoadingController } from '@ionic/angular';
 export interface users {
   id?: string,
   UserName: string,
@@ -62,6 +61,7 @@ export class Car {
 
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -75,8 +75,8 @@ export class AuthService implements OnInit {
   private carCollection: AngularFirestoreCollection<Car>;
   public cars: Observable<Car[]>;
 
-
-  constructor(public auth: AngularFireAuth, public afs: AngularFirestore, public n: NavController, public t: ToastController) {
+alluser:users[]=[];
+  constructor(public l:LoadingController,public auth: AngularFireAuth, public afs: AngularFirestore, public n: NavController, public t: ToastController) {
     this.showroomCollection = this.afs.collection<Showroom>('showroom');
     this.showrooms = this.showroomCollection.valueChanges({ idField: 'id' });
     this.userCollection = this.afs.collection<users>('USERS');
@@ -93,18 +93,26 @@ export class AuthService implements OnInit {
     );
   }
   ngOnInit(): void { }
-
+  getUsers():Observable<users[]>{
+    return this.user;
+    }
 
   authentication(email: string, password: string) { }
   adduser(us: users): Promise<DocumentReference> {
     return this.userCollection.add(us);
   }
 
-  signin(email: string, password: string) {
-
+  async signin(email: string, password: string) {
+    if(email=='may.y26@hotmail.com'){
+      this.auth.signInWithEmailAndPassword(email, password)
+      .then(() => {alert('login in succssfully'); this.n.navigateForward("/tabs2/tab1Admin") })
+      .catch((error) => { alert(error) });
+    }
+    else{
     this.auth.signInWithEmailAndPassword(email, password)
       .then(() => { alert('login in succssfully'); this.n.navigateForward("/tabs/tab1") })
       .catch((error) => { alert(error) });
+    }
   }
   signup(email: string, pass: string, user: users) {
     this.auth.createUserWithEmailAndPassword(email, pass)
@@ -116,6 +124,7 @@ export class AuthService implements OnInit {
       }
       )
       .catch((erorr) => { alert(erorr) });
+      return user.id;
   }
 
   updatepro(us: users): Promise<void> {
