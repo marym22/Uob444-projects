@@ -50,9 +50,10 @@ this.showid=n.get('id');
   }
 
   addnewcar(){
-    //this.car.specifications=this.speci;
-  //  this.car.features=this.Features;
-   // this.d.addnewcar1(this.car);
+    this.car.specifications=this.speci;
+   this.car.features=this.Features;
+   this.car.showroom=this.showid;
+   this.d.addnewcar1(this.car);
   }
 
 

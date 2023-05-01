@@ -9,17 +9,17 @@ import { ModalController } from '@ionic/angular';
 })
 export class EditPage implements OnInit {
 car:Cars={}as Cars;
-test:Cars={}as Cars;;
+//test:Cars={}as Cars;;
 try:any[]=[];
 Features:any[]=[];
 newItem='';
 newItem2='';
 constructor(public d:CarService,public n:NavParams,public mod:ModalController) {
   const x=n.get('id');
-    alert(n.get('id'));
+    //alert(n.get('id'));
     if(x){
     this.d.getCar(x).subscribe(cararr => {
-              this.test = cararr;
+              this.car = cararr;
     });
    // this.test=this.d.getCar(x);
   // alert(this.test.type);
@@ -54,7 +54,8 @@ morefet(){
 
 
 edit(){
-
+  alert(this.car.id);
+  this.d.updatecarinfo(this.car);
 }
 
 
