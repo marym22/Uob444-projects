@@ -97,7 +97,7 @@ alt.present();
 }
 
 addnewcar1(carnew:any){
-      //return this.carCollectionRef.add(carnew); 
+return this.carCollectionRef.add(carnew); 
 }
     
 
@@ -123,6 +123,7 @@ getCar(id: string): Observable<Cars> {
 
 
 updatecarinfo(car:any){
+  alert(car.id);
 this.carCollectionRef.doc(car.id).update({
   color:car.color,
   engine:car.engine,
