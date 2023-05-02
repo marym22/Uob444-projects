@@ -15,11 +15,12 @@ export class Tab1Page {
   onSearchInput(event: any) {
     const searchTerm = event.target.value.toLowerCase();
     if(searchTerm!=''){
-    this.filteredShowrooms = this.carService.showrooms.filter(showroom => {
-      return showroom.name.toLowerCase().includes(searchTerm) ||
-             showroom.address.toLowerCase().includes(searchTerm);
+    this.filteredShowrooms = [];
+    // // this.carService.showroom.filter((showroom: { name: string; address: string; }) => {
+    //   return showroom.name.toLowerCase().includes(searchTerm) ||
+    //          showroom.address.toLowerCase().includes(searchTerm);
     
-    });
+    // });
     }
     else{
       this.filteredShowrooms=[];
