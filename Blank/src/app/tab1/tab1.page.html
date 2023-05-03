@@ -18,7 +18,7 @@
     <ion-searchbar debounce="800" animated="true"  [(ngModel)]="searchTerm" (ionInput)="onSearchInput($event)"></ion-searchbar>
   </ion-item>
   <ion-slides pager="true" autoplay="true" keyboard="true" class="slide-container" >
-    <ion-slide *ngFor="let image of this.carService.showrooms">
+    <ion-slide *ngFor="let image of this.carService.showroom | async">
       <img src="{{image.image}}" class="slide-image">
     </ion-slide>
   </ion-slides>

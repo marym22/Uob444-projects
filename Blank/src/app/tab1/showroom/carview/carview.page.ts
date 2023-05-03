@@ -5,8 +5,8 @@ import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-carview',
-  templateUrl: './carview.component.html',
-  styleUrls: ['./carview.component.scss'],
+  templateUrl: './carview.page.html',
+  styleUrls: ['./carview.page.scss'],
 })
 export class CarviewPage implements OnInit {
 
@@ -17,9 +17,9 @@ export class CarviewPage implements OnInit {
   selectedTime!: string;
 
   constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private dataSrv: CarService,
+    public route: ActivatedRoute,
+    public router: Router,
+    public dataSrv: CarService,
   ) {}
 
   search() {
