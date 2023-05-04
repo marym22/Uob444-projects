@@ -20,7 +20,7 @@ export class ShowroomPage implements OnInit {
   }
   searchResults: Car[] = [];
     search() {
-      this.searchResults = this.dataSrv.carList.filter((car) => {
+      this.searchResults = this.dataSrv.carList.filter((car: { type: string; manufacturer: string; model: string; color: string; mileage: number; price: number; }) => {
         let matchesType = true;
         let matchesManufacturer = true;
         let matchesModel = true;
