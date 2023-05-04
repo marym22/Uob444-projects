@@ -3,6 +3,7 @@ import { NavParams } from '@ionic/angular';
 import { NavController } from '@ionic/angular';
 import { ModalController } from '@ionic/angular';
 import { CarService,Cars } from 'src/app/car.service';
+import { AlertController } from '@ionic/angular';
 @Component({
   selector: 'app-addcar',
   templateUrl: './addcar.page.html',
@@ -15,7 +16,7 @@ speci:any[]=[];
 car:Cars={}as Cars;
 newItem='';
 newItem2='';
-  constructor(public n:NavParams,public mod:ModalController,public d:CarService) {
+  constructor(public a:AlertController,public n:NavParams,public mod:ModalController,public d:CarService) {
 this.showid=n.get('id');
    }
 
@@ -49,11 +50,15 @@ this.showid=n.get('id');
     }
   }
 
-  addnewcar(){
+  async addnewcar(){
+    const alt=await this.a.create({
+      message:'New Car Added Successfully',
+      buttons:['OK']
+    });
     this.car.specifications=this.speci;
    this.car.features=this.Features;
    this.car.showroom=this.showid;
-   this.d.addnewcar1(this.car);
+   this.d.addnewcar1(this.car).then(()=>{alt.present();this.mod.dismiss()});
   }
 
 

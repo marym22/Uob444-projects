@@ -63,6 +63,11 @@ this.dataSrv.deletecar1(c.id);
     return mod.present();
 
   }
+  SoldCar(car:any){
+    car.sold='true';
+    alert(car.sold);
+    this.dataSrv.Soldcar1(car);
+  }
 
 
  /* searchResults: Cars[] = [];

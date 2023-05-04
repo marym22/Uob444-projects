@@ -29,7 +29,8 @@ export interface Cars{
   price:number,
   showroom:number,
   specifications:any,
-  type:string
+  type:string,
+  sold:string
 }
 @Injectable({
   providedIn: 'root'
@@ -104,12 +105,12 @@ return this.carCollectionRef.add(carnew);
 
 getCar(id: string): Observable<Cars> {
   return this.carCollectionRef.doc<Cars>(id).valueChanges().pipe(
-    map(idea => {
+    map(car1 => {
      
-      if (idea) {
+      if (car1) {
         //alert(idea.type);
-        idea.id = id;
-        return idea as Cars; // add type assertion here
+        car1.id = id;
+        return car1 as Cars; // add type assertion here
       } else {
         throw new Error(`Document with ID ${id} does not exist.`);
       }
@@ -118,7 +119,27 @@ getCar(id: string): Observable<Cars> {
   );
 }
     
-  
+  Soldcar1(car:any){
+    alert(car.id);
+    alert(car.sold);
+this.carCollectionRef.doc(car.id).update({
+ /* color:car.color,
+  engine:car.engine,
+  features:car.features,
+  image:car.image,
+  manufacturer:car.manufacturer,
+  mileage:car.mileage,
+  model:car.model,
+  numberOfSeats:car.numberOfSeats,
+  price:car.price,
+  showroom:car.showroom,
+  specifications:car.specifications,
+  type:car.type,*/
+  sold:car.sold
+});
+
+
+  }
 
 
 updatecarinfo(car:any){

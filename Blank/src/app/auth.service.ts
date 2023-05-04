@@ -74,7 +74,7 @@ export class AuthService implements OnInit {
 
   private carCollection: AngularFirestoreCollection<Car>;
   public cars: Observable<Car[]>;
-
+  userid:any;
 alluser:users[]=[];
   constructor(public l:LoadingController,public auth: AngularFireAuth, public afs: AngularFirestore, public n: NavController, public t: ToastController) {
     this.showroomCollection = this.afs.collection<Showroom>('showroom');
@@ -93,42 +93,56 @@ alluser:users[]=[];
     );
   }
   ngOnInit(): void { }
+
   getUsers():Observable<users[]>{
     return this.user;
     }
-
+//: Promise<DocumentReference>
   authentication(email: string, password: string) { }
-  adduser(us: users): Promise<DocumentReference> {
-    return this.userCollection.add(us);
+  adduser(us: users,id:any) {
+     this.userCollection.doc(id).set({
+      UserName: us.UserName,
+  Email: us.Email,
+  phone: us.phone,
+  password: us.password,
+  confirmpass: us.confirmpass
+  });
   }
 
   async signin(email: string, password: string) {
     if(email=='may.y26@hotmail.com'){
       this.auth.signInWithEmailAndPassword(email, password)
-      .then(() => {alert('login in succssfully'); this.n.navigateForward("/tabs2/tab1Admin") })
+      .then((res) => {alert('login in succssfully'); this.n.navigateForward("/tabs2/tab1Admin") })
       .catch((error) => { alert(error) });
     }
     else{
     this.auth.signInWithEmailAndPassword(email, password)
-      .then(() => { alert('login in succssfully'); this.n.navigateForward("/tabs/tab1") })
+      .then(() => { alert('login in succssfully') ;this.n.navigateForward("/tabs/tab1") })
       .catch((error) => { alert(error) });
     }
   }
   signup(email: string, pass: string, user: users) {
-    this.auth.createUserWithEmailAndPassword(email, pass)
-      .then(() => {
-        this.adduser(user).then((response) => {
-          alert("Inserted Successfully"); this.n.navigateForward("/tabs/tab1")
+    const us=this.auth.createUserWithEmailAndPassword(email, pass)
+      .then((usercred) => {const us=usercred.user?.uid;
+        this.adduser(user,us);
+          alert("Inserted Successfully");
+           this.n.navigateForward("/tabs/tab1")
           user = {} as users;
         })
-      }
-      )
+      
+      
       .catch((erorr) => { alert(erorr) });
       return user.id;
   }
 
   updatepro(us: users): Promise<void> {
-    return this.userCollection.doc(us.id).update({ UserName: us.UserName, Email: us.Email });
+    return this.userCollection.doc(us.id).update({ 
+      UserName: us.UserName, 
+      Email: us.Email,
+      phone:us.phone ,
+      password:us.password,
+      confirmpass:us.confirmpass
+    });
   }
 
   async send(email: string) {
@@ -139,6 +153,26 @@ alluser:users[]=[];
     this.auth.sendPasswordResetEmail(email).then((res) => { mess1.present() }).catch((err) => { alert(err) });
   }
 
+  getUser(id: string): Observable<users> {
+    return this.userCollection.doc<users>(id).valueChanges().pipe(
+      map(User1 => {
+       
+        if (User1) {
+          //alert(idea.type);
+          User1.id = id;
+          return User1 as users; // add type assertion here
+        } else {
+          throw new Error(`Document with ID ${id} does not exist.`);
+        }
+       
+      })
+    );
+  }
+  logOut1(){
+    this.auth.signOut().then(()=>{this.n.navigateBack('/home')});
+  }
+
+  
 
 
 

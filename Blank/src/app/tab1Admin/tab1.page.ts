@@ -17,7 +17,7 @@ export class Tab1Page {
     if(searchTerm!=''){
     this.filteredShowrooms = this.carService.showrooms.filter(showroom => {
       return showroom.name.toLowerCase().includes(searchTerm) ||
-             showroom.address.toLowerCase().includes(searchTerm);
+      showroom.address.toLowerCase().includes(searchTerm);
     
     });
     }
@@ -35,6 +35,12 @@ export class Tab1Page {
   constructor(public authService: AuthService, public carService: CarService, private navCtrl: NavController) {
 
 
+  }
+
+  passparameter(){
+    const params={
+      param1:''
+    }
   }
   
 }
