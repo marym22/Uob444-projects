@@ -35,6 +35,10 @@ const routes: Routes = [
     path: 'addcar',
     loadChildren: () => import('./tab1Admin/addcar/addcar.module').then( m => m.AddcarPageModule)
   },
+  {
+    path: 'add-admin',
+    loadChildren: () => import('./tab3Admin/add-admin/add-admin.module').then( m => m.AddAdminPageModule)
+  },
 
 
   

@@ -22,17 +22,20 @@
         <ion-label>Name</ion-label>
         <ion-input type="text" [(ngModel)]="user.UserName" color="medium"></ion-input>
         <ion-button fill="clear" (click)="Edit()"><ion-icon name='pencil'></ion-icon></ion-button>
-      </ion-item>
-      <ion-item color="light">
-        <ion-label>Email</ion-label>
-        <ion-input type="text" [(ngModel)]="user.Email" color="medium"></ion-input>
-        <ion-button fill="clear"><ion-icon name='pencil'></ion-icon></ion-button>
-      </ion-item>
+        </ion-item>
+
       <ion-item color="light">
         <ion-label>Phone Number</ion-label>
         <ion-input type="text" [(ngModel)]="user.phone" color="medium"></ion-input>
         <ion-button fill="clear"><ion-icon name='pencil' ></ion-icon></ion-button>
       </ion-item>
+  
+    <ion-item color="light">
+      <ion-label>Email </ion-label>
+   
+      <ion-input type="text" color="medium" [(ngModel)]="user.Email" readonly="true"></ion-input>
+     
+    </ion-item>
     </ion-list>
 
   <div align="center">

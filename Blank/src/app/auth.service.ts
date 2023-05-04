@@ -9,6 +9,7 @@ import { NavController } from '@ionic/angular';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { ToastController } from '@ionic/angular';
 import { LoadingController } from '@ionic/angular';
+
 export interface users {
   id?: string,
   UserName: string,
@@ -168,9 +169,14 @@ alluser:users[]=[];
       })
     );
   }
-  logOut1(){
-    this.auth.signOut().then(()=>{this.n.navigateBack('/home')});
+   logOut1(){
+ this.auth.signOut().then(()=>{this.n.navigateBack('/home')});
+  
   }
+
+  deleteaccount(){
+    
+}
 
   
 
