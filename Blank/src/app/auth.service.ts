@@ -119,7 +119,7 @@ alluser:users[]=[];
     else{
     this.auth.signInWithEmailAndPassword(email, password)
       .then(() => { alert('login in succssfully') ;this.n.navigateForward("/tabs/tab1") })
-      .catch((error) => { alert(error) });
+      .catch((error) => { alert('Invalid Email or Password') });
     }
   }
   signup(email: string, pass: string, user: users) {
@@ -132,7 +132,7 @@ alluser:users[]=[];
         })
       
       
-      .catch((erorr) => { alert(erorr) });
+      .catch((erorr) => { alert('The email address is already in use by another!') });
       return user.id;
   }
 
