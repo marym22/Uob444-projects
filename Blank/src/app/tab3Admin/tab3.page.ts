@@ -24,7 +24,6 @@ user:users={}as users;
     }
     ngOnInit(): void {
       
-
     }
    
   LogOut(){
