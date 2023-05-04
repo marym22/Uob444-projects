@@ -126,7 +126,7 @@ alluser:users[]=[];
     const us=this.auth.createUserWithEmailAndPassword(email, pass)
       .then((usercred) => {const us=usercred.user?.uid;
         this.adduser(user,us);
-          alert("Inserted Successfully");
+          alert("Account Successfully Created");
            this.n.navigateForward("/tabs/tab1")
           user = {} as users;
         })
